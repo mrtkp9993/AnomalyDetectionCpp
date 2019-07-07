@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 std::vector<double> parseCsv(std::string filename) {
   std::vector<double> data;
