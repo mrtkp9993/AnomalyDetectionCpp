@@ -6,8 +6,9 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
-std::vector<double> parseCsv(std::string filename) {
+std::vector<double> parseCsv(const std::string& filename) {
   std::vector<double> data;
   std::fstream file(filename);
   std::string line;
@@ -17,13 +18,13 @@ std::vector<double> parseCsv(std::string filename) {
   return data;
 }
 
-double mean(std::vector<double> data) {
+double mean(const std::vector<double>& data) {
   double psum = std::accumulate(data.begin(), data.end(), 0.0);
   double pmean = psum / data.size();
   return pmean;
 }
 
-double stddev(std::vector<double> data) {
+double stddev(const std::vector<double>& data) {
   double pmean = mean(data);
   double acc = 0.0;
   std::for_each(data.begin(), data.end(),
@@ -32,7 +33,7 @@ double stddev(std::vector<double> data) {
   return sstddev;
 }
 
-std::vector<double> detect_anomalies(std::vector<double> data) {
+std::vector<double> detect_anomalies(const std::vector<double>& data) {
   std::vector<double> anomalies;
   double data_mean = mean(data);
   double data_stddev = stddev(data);
@@ -45,7 +46,7 @@ std::vector<double> detect_anomalies(std::vector<double> data) {
   return anomalies;
 }
 
-std::vector<double> detect_anomalies_moving(std::vector<double> data,
+std::vector<double> detect_anomalies_moving(const std::vector<double>& data,
                                             int window_size) {
   std::vector<double> anomalies;
   for (int i = window_size - 1; i < data.size(); i++) {
