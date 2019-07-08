@@ -1,2 +1,7 @@
 .vscode/
+.idea/
 build/
+cmake-build-debug/
+cmake-build-release/
+bin/
+lib/
