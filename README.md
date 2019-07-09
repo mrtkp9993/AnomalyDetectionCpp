@@ -1,5 +1,10 @@
 # AnomalyDetectionCpp
 
+## Current methods for anomaly detection
+
+* Three-sigma rule.
+* Median absolute deviation.
+
 ## Build
 
 ```
