@@ -11,13 +11,18 @@ int main(int argc, char *argv[]) {
     std::vector<double> data = parseCsv(argv[1]);
     std::vector<double> anomalies_moving =
             detect_anomalies_moving(data, std::stoi(argv[2]));
-    std::vector<double> anomalies_global = detect_anomalies(data);
+    std::vector<double> anomalies_global = detect_anomalies_global(data);
+    std::vector<double> anomalies_mad = detect_anomalies_mad(data);
     std::cout << "Detected anomalies with moving averages: " << std::endl;
     for (auto &i : anomalies_moving) {
       std::cout << i << std::endl;
     }
     std::cout << "Detected anomalies with global average: " << std::endl;
     for (auto &i : anomalies_global) {
+      std::cout << i << std::endl;
+    }
+    std::cout << "Detected anomalies with MAD: " << std::endl;
+    for (auto &i : anomalies_mad) {
       std::cout << i << std::endl;
     }
   }

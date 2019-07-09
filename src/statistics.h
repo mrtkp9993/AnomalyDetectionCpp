@@ -8,5 +8,6 @@
 
 double mean(const std::vector<double> &data);
 double stddev(const std::vector<double> &data);
+double median(const std::vector<double> &data);
 
 #endif
