@@ -3,9 +3,14 @@
 
 #include "statistics.h"
 
-std::vector<double> detect_anomalies_global(const std::vector<double> &data);
-std::vector<double> detect_anomalies_moving(const std::vector<double> &data,
+struct Result {
+  std::vector<int> indexes;
+  std::vector<double> anomalies;
+};
+
+Result detect_anomalies_global(const std::vector<double> &data);
+Result detect_anomalies_moving(const std::vector<double> &data,
                                             int window_size);
-std::vector<double> detect_anomalies_mad(const std::vector<double> &data);
+Result detect_anomalies_mad(const std::vector<double> &data);
 
 #endif
