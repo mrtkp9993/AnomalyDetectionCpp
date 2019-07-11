@@ -16,6 +16,17 @@ make
 
 ## Usage
 
-```
-./AnomalyDetectionCpp example.csv 15
-```
+* Three-sigma rule (global mean/variance):
+    ```
+    ./AnomalyDetectionCpp example.csv tsg
+    ```
+    
+* Three-sigma rule (rolling mean/variance):
+    ```
+    ./AnomalyDetectionCpp example.csv tsr 15
+    ```
+
+* Median absolute deviation:
+    ```
+    ./AnomalyDetectionCpp example.csv mad
+    ```
