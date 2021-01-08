@@ -1,5 +1,7 @@
 # AnomalyDetectionCpp
 
+[![DOI](https://zenodo.org/badge/195661645.svg)](https://zenodo.org/badge/latestdoi/195661645)
+
 ## Current methods for anomaly detection
 
 * Three-sigma rule.
